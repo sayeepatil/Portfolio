@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Code, Database, Globe, Wrench, ChevronDown, ChevronUp } from 'lucide-react';
+import {Code, Database, Globe, Wrench, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState<number | null>(null);
@@ -24,6 +24,14 @@ const Skills = () => {
   }, []);
 
   const skillCategories = [
+      {
+      title: "Financial Tools",
+      icon: <Code className="w-6 h-6" />,
+      skills: [
+        { name: "Microsoft Excel", level: 85 },
+        { name: "Financial Modelling", level: 50 }
+      ]
+    },
     {
       title: "Programming Languages",
       icon: <Code className="w-6 h-6" />,

@@ -22,68 +22,79 @@ const Certifications = () => {
     return () => observer.disconnect();
   }, []);
 
-  const certifications = [
-    {
-      title: "Investment Banking Foundation",
-      issuer: "Wall Street Prep",
-      date: "In Progress",
-      status: "ongoing",
-      description: "Comprehensive program covering financial modeling, valuation techniques, and M&A analysis fundamentals.",
-      skills: ["Financial Modeling", "Valuation", "M&A Analysis", "Excel"],
-      credentialId: "WSP-2024-IB-001",
-      image: "📊"
-    },
-    {
-      title: "Data Analytics with Python",
-      issuer: "IBM",
-      date: "December 2024",
-      status: "completed",
-      description: "Advanced certification in data analysis using Python, pandas, and visualization libraries.",
-      skills: ["Python", "Pandas", "Data Visualization", "Statistical Analysis"],
-      credentialId: "IBM-DA-2024-SP",
-      image: "🐍"
-    },
-    {
-      title: "Full Stack Web Development",
-      issuer: "freeCodeCamp",
-      date: "November 2024",
-      status: "completed",
-      description: "Comprehensive certification covering modern web development technologies and best practices.",
-      skills: ["React", "Node.js", "MongoDB", "Express.js"],
-      credentialId: "FCC-2024-FSWD-789",
-      image: "🌐"
-    },
-    {
-      title: "Machine Learning Specialization",
-      issuer: "Stanford University (Coursera)",
-      date: "September 2024",
-      status: "completed",
-      description: "Intensive program covering supervised learning, unsupervised learning, and neural networks.",
-      skills: ["Machine Learning", "Neural Networks", "Python", "TensorFlow"],
-      credentialId: "STAN-ML-2024-456",
-      image: "🤖"
-    },
-    {
-      title: "Cloud Computing Fundamentals",
-      issuer: "Google Cloud",
-      date: "August 2024",
-      status: "completed",
-      description: "Foundation certification in cloud computing concepts and Google Cloud Platform services.",
-      skills: ["Cloud Computing", "Google Cloud", "DevOps", "Docker"],
-      credentialId: "GCP-2024-CCF-123",
-      image: "☁️"
-    },
-    {
-      title: "Agile Project Management",
-      issuer: "Scrum Alliance",
-      date: "July 2024",
-      status: "completed",
-      description: "Certification in agile methodologies and scrum framework for effective project management.",
-      skills: ["Agile", "Scrum", "Project Management", "Team Leadership"],
-      credentialId: "SA-APM-2024-987",
-      image: "⚡"
-    }
-  ];
+const certifications = [
+  {
+    title: "Beginning C++ Programming - From Beginner to Beyond",
+    issuer: "Udemy",
+    date: "December 2023",
+    status: "completed",
+    description: "",
+    skills: ["C++"],
+    credentialId: "UC-bOdf6302-ecbd-499b-9364-b6e65f913123",
+    image: "📊"
+  },
+
+  {
+    title: "Full Stack Web Development",
+    issuer: "freeCodeCamp",
+    date: "November 2024",
+    status: "completed",
+    description: "Comprehensive certification covering modern web development technologies and best practices.",
+    skills: ["React", "Node.js", "MongoDB", "Express.js"],
+    credentialId: "FCC-2024-FSWD-789",
+    image: "🌐"
+  },
+  {
+    title: "Angular Basics",
+    issuer: "Simplilearn",
+    date: "February 2025",
+    status: "completed",
+    description: "Fundamentals of Angular framework and component-based architecture.",
+    skills: ["Angular"],
+    credentialId: "7920138",
+    image: "🅰️"
+  },
+  {
+    title: "Angular Essential Training",
+    issuer: "LinkedIn Learning",
+    date: "February 2025",
+    status: "completed",
+    description: "Hands-on training in Angular development, components, services, and routing.",
+    skills: ["Angular"],
+    credentialId: "acef3f7781fb9963aac98c5b4383ce16378565ce8d270fddf8d34f9016635b3f",
+    image: "🅰️"
+  },
+  {
+    title: "Introduction to Express JS",
+    issuer: "Simplilearn",
+    date: "February 2025",
+    status: "completed",
+    description: "Introduction to backend web development using Express.js.",
+    skills: ["Express.js", "Backend Development"],
+    credentialId: "7925108",
+    image: "🚂"
+  },
+  {
+    title: "Getting Started with NodeJS",
+    issuer: "Simplilearn",
+    date: "February 2025",
+    status: "completed",
+    description: "Essentials of Node.js for server-side JavaScript development.",
+    skills: ["Node.js", "JavaScript", "Server-side Development"],
+    credentialId: "7928569",
+    image: "🟢"
+  },
+  {
+    title: "AI/ML Virtual Internship",
+    issuer: "Google",
+    date: "2025",
+    status: "completed",
+    description: "AI/ML-focused internship program through Google and AICTE virtual platform.",
+    skills: ["AI", "Machine Learning", "Python"],
+    credentialId: "13d720e8a3832e18c691faeff503eac3",
+    image: "🤖"
+  }
+];
 
   return (
     <section ref={sectionRef} id="certifications" className="py-20 bg-white dark:bg-gray-900">

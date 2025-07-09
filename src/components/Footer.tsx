@@ -63,7 +63,6 @@ const Footer = () => {
             © 2025 Sayee Patil. All rights reserved.
           </p>
           <p className="text-gray-400 font-bold mt-2 flex items-center justify-center gap-2">
-  Built with <Heart className="w-4 h-4 text-red-500" /> by SP!
 </p>
 
         </div>

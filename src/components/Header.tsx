@@ -42,7 +42,7 @@ const Header = () => {
     { name: 'Education', href: '#education' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
+    { name: 'Positions of Responsibility', href: '#experience' },
     { name: 'Achievements', href: '#achievements' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' }
@@ -56,7 +56,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <a href="#home" className="text-2xl font-bold text-gray-900 dark:text-white">
-              Sayee.
+              
             </a>
           </div>
           

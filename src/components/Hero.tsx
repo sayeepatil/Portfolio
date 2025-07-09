@@ -18,12 +18,14 @@ const Hero = () => {
               Sayee Patil
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-              Tech Enthusiast | Aspiring Investment Banker
+              Computer Science Student | Aspiring Investment Banker
+
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl">
-              I'm a Computer Science student at PCCOE passionate about software development, AI, and data analytics. 
-              With experience in full-stack projects, leadership roles, and a growing interest in financial strategy 
-              and investment banking, I aim to bridge technology and business impact.
+Trained in computer science. Driven by finance.
+I’m building a path where technology drives smarter financial decisions — from data-backed insights to strategic investments.
+Curious, analytical, and always evolving, I aim to be part of a new generation of finance professionals who think in code and operate in capital.
+
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -35,7 +37,7 @@ const Hero = () => {
                 <ArrowRight size={20} />
               </a>
               <a 
-                href="/resume.pdf"
+                href="Sayee.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center gap-2"
