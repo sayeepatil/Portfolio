@@ -80,7 +80,7 @@ const certifications = [
     status: "Completed",
     description: "Hands-on training in Angular development, components, services, and routing.",
     skills: ["Angular", "Frontend Development"],
-    credentialId: "acef3f7781fb9963aac98c5b4383ce16378565ce8d270fddf8d34f9016635b3f",
+    credentialId: " ",
     image: "🧩"
   },
   {
