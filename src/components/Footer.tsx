@@ -20,7 +20,7 @@ const Footer = () => {
               Computer Science Student | Aspiring Investment Banker
             </p>
             <p className="text-gray-400">
-              Passionate about bridging technology and finance to create meaningful solutions.
+              Bridging technology and finance to create meaningful solutions.
             </p>
           </div>
           
