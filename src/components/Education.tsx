@@ -60,10 +60,7 @@ const Education = () => {
                     <Calendar className="w-5 h-5" />
                     <span>Nov 2022 – June 2026</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                    <MapPin className="w-5 h-5" />
-                    <span>CGPA: 6.5 / 10</span>
-                  </div>
+              
                 </div>
                 
                 <div>

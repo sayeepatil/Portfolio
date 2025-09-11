@@ -162,6 +162,7 @@ const certifications = [
     skills: ["Python", "AI", "Machine Learning"],
     credentialId: "",
     image: "🤯"
+ 
   },
   {
     title: "Website Development",
