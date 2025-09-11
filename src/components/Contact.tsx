@@ -1,43 +1,45 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, Linkedin, Github, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isVisible, setIsVisible] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setIsVisible(true);
+    }, { threshold: 0.1 });
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+
+    if (formRef.current) {
+      emailjs.sendForm(
+        "service_lrgxmio",      // ✅ Your Service ID
+        "template_luegz9m",     // ✅ Your Template ID
+        formRef.current,
+        "ZDrQSwOkGDoMoI78n"     // ✅ Your Public Key
+      )
+      .then(() => {
+        setStatus("✅ Message sent successfully!");
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch(() => {
+        setStatus("❌ Failed to send message. Try again later.");
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const contactInfo = [
@@ -70,6 +72,7 @@ const Contact = () => {
   return (
     <section ref={sectionRef} id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Contact Me
@@ -80,6 +83,7 @@ const Contact = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Info Section */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'animate-slideInLeft' : 'opacity-0 translate-x-[-50px]'}`}>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Get In Touch
@@ -104,8 +108,9 @@ const Contact = () => {
             </div>
           </div>
           
+          {/* Contact Form Section */}
           <div className={`bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 transition-all duration-1000 delay-500 ${isVisible ? 'animate-slideInRight' : 'opacity-0 translate-x-[50px]'}`}>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Name
@@ -161,6 +166,12 @@ const Contact = () => {
                 <Send className="w-5 h-5" />
                 Send Message
               </button>
+
+              {status && (
+                <p className="text-center mt-4 text-sm text-gray-700 dark:text-gray-300">
+                  {status}
+                </p>
+              )}
             </form>
           </div>
         </div>

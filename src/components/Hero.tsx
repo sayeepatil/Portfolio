@@ -51,15 +51,7 @@ const Hero = () => {
                 Contact Me
                 <ArrowRight size={20} />
               </a>
-              <a
-                href="Sayee.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center gap-2"
-              >
-                <Download size={20} />
-                View Resume
-              </a>
+             
             </div>
 
             <div className="flex justify-center lg:justify-start gap-6">

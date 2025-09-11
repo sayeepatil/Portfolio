@@ -24,6 +24,21 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Moat Swarming Framework",
+      period: "July 2025 – Present",
+      description:
+        "A collaborative marketplace platform enabling unemployed individuals to reverse engineer market leaders and co-create parallel ventures.",
+      technologies: ["React.js", "Node.js", "Docker", "Kubernetes", "AI/ML"],
+      achievements: [
+        "Developing a collaborative marketplace with microservices architecture and containerized deployment (Docker, Kubernetes).",
+        "Implemented CI/CD pipelines across multi-cloud environments for seamless deployment.",
+        "Integrated AI-driven recommendation systems and graph models for team matching, knowledge diffusion, and reputation tracking.",
+      ],
+      image: "🌐",
+      stats: { focus: "Collaboration", cloud: "Multi-cloud" },
+      github: "https://github.com/sayeepatil/Moat-Swarming-Framework", // update if needed
+    },
+    {
       title: "Expense Tracker",
       period: "March 2025 – April 2025",
       description:
