@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
-import profileImg from '../assets/sayee-img.png'; // ✅ Ensure the path and extension are correct
+import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import profileImg from '../assets/sayee-img.png'; // ✅ Make sure this path and file name are correct
 
-const images = [
-  'sayee-img.png',
-];
+const images = [profileImg]; // ✅ Use imported image
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -28,6 +26,8 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Section: Text & Socials */}
           <div className="text-center lg:text-left animate-fadeInUp">
             <p className="text-teal-600 dark:text-teal-400 font-semibold text-lg mb-4">Hello, I'm</p>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
@@ -50,7 +50,6 @@ const Hero = () => {
                 Contact Me
                 <ArrowRight size={20} />
               </a>
-             
             </div>
 
             <div className="flex justify-center lg:justify-start gap-6">
@@ -66,16 +65,16 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* 📸 Slideshow Section */}
+          {/* Right Section: Slideshow Image */}
           <div className="flex justify-center lg:justify-end animate-fadeInUp animation-delay-300">
-            <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-teal-500">
+            <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-grey">
               <img
                 src={images[currentImage]}
                 alt="Slideshow"
                 className="w-full h-full object-cover transition-opacity duration-1000"
               />
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange-400 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-              <div className="text-2xl">📸</div>
+                <div className="text-2xl">📸</div>
               </div>
             </div>
           </div>
