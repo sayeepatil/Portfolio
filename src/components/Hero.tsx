@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import profileImg from '../assets/sayee-img.png'; // ✅ Ensure the path and extension are correct
 
-const images = ['/Users/sayeepatil/Sayee-Portfolio/src/components/sayeelinkedinedited-min.jpg'];
-
+const images = [
+  'sayee-img.png',
+];
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
