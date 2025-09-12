@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 const images = [
-  'IMG_9425.JPG',
-  'IMG_9430.JPG',
-  'IMG_9446.JPG',
+  'sayeelinkedinedited-min.jpg',
 ];
 
 const Hero = () => {

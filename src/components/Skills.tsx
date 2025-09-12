@@ -42,21 +42,21 @@ const Skills = () => {
       icon: <Database className="w-6 h-6" />,
       skills: ["MongoDB", "MySQL"],
     },
-    {
-      title: "Tools & Data Analysis",
-      type: "Tools",
-      icon: <Wrench className="w-6 h-6" />,
-      skills: ["Git", "GitHub", "VS Code", "Linux", "Pandas", "NumPy", "Tableau", "Financial Modeling"],
-    },
-    {
-      title: "Financial Tools",
-      type: "Soft Skills",
-      icon: <Code className="w-6 h-6" />,
-      skills: ["Microsoft Excel", "Financial Modelling"],
-    },
-  ];
+  {
+    title: "Tools & Data Analysis",
+    type: "Tools",
+    icon: <Wrench className="w-6 h-6" />,
+    skills: ["Git", "GitHub", "VS Code", "Linux", "NumPy", "Tableau"],
+  },
+  {
+    title: "Financial Tools",
+    type: "Financial Tools",
+    icon: <Code className="w-6 h-6" />,
+    skills: ["Microsoft Excel", "Financial Modelling", "Power BI"],
+  },
+];
 
-  const filters = ["All Skills", "Languages", "Web Technologies", "Databases", "Tools", "Finance Tools"];
+const filters = ["All Skills", "Languages", "Web Technologies", "Databases", "Tools", "Financial Tools"];
 
   const filteredSkills =
     activeFilter === "All Skills"
