@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 
-const images = [
-  '/Users/sayeepatil/Sayee-Portfolio/sayeelinkedinedited-min.jpg',
-];
+const images = ['/sayeelinkedinedited-min.jpg'];
+
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
