@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import profileImg from '../assets/sayee-img.png'; // ✅ Make sure this path and file name are correct
+import profileImg from '/Users/sayeepatil/Sayee-Portfolio/src/assets/sayee-img.png'; // ✅ Make sure this path and file name are correct
 
 const images = [profileImg]; // ✅ Use imported image
 
