@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import profileImg from '/Users/sayeepatil/Sayee-Portfolio/src/assets/sayee-img.png'; // ✅ Make sure this path and file name are correct
+import profileImg from '/Users/sayeepatil/Sayee-Portfolio/src/assets/WhatsApp Image 2025-09-16 at 13.26.04.jpeg'; // ✅ Make sure this path and file name are correct
 
 const images = [profileImg]; // ✅ Use imported image
 
@@ -65,20 +65,18 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Section: Slideshow Image */}
+          {/* Right Section: Larger Slideshow Image */}
           <div className="flex justify-center lg:justify-end animate-fadeInUp animation-delay-300">
-            <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-grey">
+            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-gray-300">
               <img
                 src={images[currentImage]}
                 alt="Slideshow"
                 className="w-full h-full object-cover transition-opacity duration-1000"
               />
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange-400 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                <div className="text-2xl">📸</div>
-              </div>
+              {/* Camera icon inside circle */}
+              <div className="absolute bottom-3 right-3 text-3xl">📸</div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

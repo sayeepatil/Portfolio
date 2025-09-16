@@ -8,16 +8,12 @@ const Certifications = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
   }, []);
@@ -123,10 +119,8 @@ const Certifications = () => {
     },
   ];
 
-  // Function to safely encode URLs with spaces
-  const encodeURL = (url: string) => {
-    return url.split("/").map(encodeURIComponent).join("/");
-  };
+  const encodeURL = (url: string) =>
+    url.split("/").map(encodeURIComponent).join("/");
 
   return (
     <section
@@ -134,24 +128,30 @@ const Certifications = () => {
       id="certifications"
       className="py-20 bg-white dark:bg-gray-900"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-6 lg:px-12">
+        {/* Heading */}
         <h2
-          className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-12 transition-all duration-1000 ${
-            isVisible ? "animate-fadeInUp" : "opacity-0 translate-y-[30px]"
+          className={`text-3xl md:text-4xl font-bold text-center mb-12 transition-all duration-1000 ${
+            isVisible
+              ? "animate-fadeInUp text-gray-900 dark:text-white"
+              : "opacity-0 translate-y-[30px]"
           }`}
         >
-          Certifications
+          <span className="text-gray-900 dark:text-white">Certifica</span>
+          <span className="text-teal-600 dark:text-teal-400">tions</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className={`rounded-xl overflow-hidden shadow-md border border-grey dark:border-gray-400 hover:shadow-xl transition-all duration-500 hover:scale-105 ${
+              className={`rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-500 ${
                 isVisible ? "animate-slideInUp" : "opacity-0 translate-y-[50px]"
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
+              {/* Image */}
               {cert.image ? (
                 <a
                   href={cert.pdf ? encodeURL(cert.pdf) : "#"}
@@ -161,17 +161,18 @@ const Certifications = () => {
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="w-full h-56 object-cover"
+                    className="w-full h-48 object-cover"
                   />
                 </a>
               ) : (
-                <div className="w-full h-56 bg-gray-200 flex items-center justify-center text-gray-500">
+                <div className="w-full h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-300">
                   No Preview
                 </div>
               )}
 
-              <div className="p-4 bg-white dark:bg-gray-800">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+              {/* Info */}
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   {cert.title}
                 </h3>
                 <p className="text-teal-600 dark:text-teal-400 font-medium">
@@ -181,6 +182,8 @@ const Certifications = () => {
                   <Calendar className="w-4 h-4" />
                   <span className="text-sm">{cert.date}</span>
                 </div>
+
+                {/* Link */}
                 {cert.pdf && (
                   <div className="mt-3">
                     <a

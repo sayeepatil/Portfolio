@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import profileImg from '../assets/sayee-img.png'; // ✅ Ensure the path and extension are correct
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,54 +22,53 @@ const About = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Text Column */}
-          <div
-            className={`transition-all duration-1000 ${
-              isVisible ? 'animate-slideInLeft' : 'opacity-0 translate-x-[-50px]'
-            }`}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              About Me
+    <section
+      ref={sectionRef}
+      id="about"
+      className="relative py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden"
+    >
+      {/* Background grid pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-10xl mx-auto text-center"> {/* Increased max width */}
+
+          {/* Title with green circle behind */}
+          <div className="relative mb-16">
+            <div className="absolute inset-0 flex items-center justify-center -z-10">
+            </div>
+            <h2
+              className={`text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-8 relative z-10 transition-all duration-1000 ${
+                isVisible ? 'animate-slideInUp' : 'opacity-0 translate-y-[50px]'
+              }`}
+            >
+              About <span className="text-teal-600 dark:text-teal-400">Me</span>
             </h2>
-            <div className="space-y-6 text-gray-700 dark:text-gray-300">
-              <p className="text-lg leading-relaxed">
-                I'm a Computer Science undergraduate at Pimpri Chinchwad College of Engineering, 
-                with a keen interest in combining technology and finance to solve real-world business problems.
+          </div>
+
+          {/* Paragraph content with blue circle behind */}
+          <div className="relative">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -z-10">
+            </div>
+
+            <div className={`space-y-8 text-gray-700 dark:text-gray-300 text-xl md:text-2xl leading-relaxed transition-all duration-1000 ${
+              isVisible ? 'animate-slideInUp' : 'opacity-0 translate-y-[50px]'
+            }`}>
+              <p className="max-w-5xl mx-auto"> {/* Increased paragraph width */}
+                I’m a Computer Engineering undergraduate at PCCOE, passionate about bridging <span className="font-semibold text-teal-600 dark:text-teal-400">technology</span> and <span className="font-semibold text-blue-600 dark:text-blue-400">finance</span> to create innovative business solutions.
               </p>
-              <p className="text-lg leading-relaxed">
-                Skilled in web development, data analysis, and financial modeling, I've built full-stack 
-                applications and published research in AI-based academic performance analysis. I enjoy 
-                translating complex data into actionable insights.
+              <p className="max-w-5xl mx-auto">
+                Skilled in <span className="font-semibold">full-stack development</span>, <span className="font-semibold">data analysis</span>, and <span className="font-semibold">financial modeling</span>, I enjoy turning complex problems into actionable insights. My research in AI-driven academic performance analysis reflects my curiosity for data-driven problem solving.
               </p>
-              <p className="text-lg leading-relaxed">
-                I have led student bodies like ISTE and ACM PCCOE chapters, managed large teams, executed 
-                high-impact events, and secured sponsorships worth over ₹1.2 lakh. I'm also pursuing 
-                investment banking certifications to further explore the intersection of technology and finance.
+              <p className="max-w-5xl mx-auto">
+                Beyond academics, I’ve led teams as part of <span className="font-semibold">ISTE</span> and <span className="font-semibold">ACM PCCOE</span>, where I organized large-scale events and built strong industry collaborations. I am also pursuing a  <span className="font-semibold"> certification program in investment banking and financial markets from IIM Ranchi</span>, strengthening my understanding of management and finance.
+              </p>
+              <p className="max-w-5xl mx-auto">
+                I consider myself a quick learner, proactive, and highly adaptable, always eager to explore new opportunities and grow both personally and professionally.
               </p>
             </div>
           </div>
 
-          {/* Right Image Column */}
-          <div
-            className={`relative transition-all duration-1000 delay-300 ${
-              isVisible ? 'animate-slideInRight' : 'opacity-0 translate-x-[50px]'
-            }`}
-          >
-            <div className="flex items-center justify-center">
-              <img
-                src={profileImg}
-                alt="Profile"
-                className={`h-72 w-72 rounded-full object-cover
-                  ring-4 ring-cyan-400/30
-                  shadow-[0_0_60px_rgba(255,255,255,0.25)]
-                  transition-transform duration-700 ease-out
-                  ${isVisible ? 'animate-fadeZoomIn' : 'opacity-0 scale-75'}`}
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>

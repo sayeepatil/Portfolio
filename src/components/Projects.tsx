@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, Calendar } from 'lucide-react';
+import React, { useEffect, useRef, useState } from "react";
+import { Calendar } from "lucide-react";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,17 +8,12 @@ const Projects = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -28,15 +23,13 @@ const Projects = () => {
       period: "July 2025 – Present",
       description:
         "A collaborative marketplace platform enabling unemployed individuals to reverse engineer market leaders and co-create parallel ventures.",
-      technologies: ["React.js", "Node.js", "Docker", "Kubernetes", "AI/ML"],
+      technologies: ["Langchain", "React.js", "Node.js", "Docker", "Kubernetes", "AI/ML"],
       achievements: [
-        "Developing a collaborative marketplace with microservices architecture and containerized deployment (Docker, Kubernetes).",
+        "Developing a collaborative marketplace with microservices architecture and containerized deployment.",
         "Implemented CI/CD pipelines across multi-cloud environments for seamless deployment.",
         "Integrated AI-driven recommendation systems and graph models for team matching, knowledge diffusion, and reputation tracking.",
       ],
       image: "🌐",
-      stats: { focus: "Collaboration", cloud: "Multi-cloud" },
-      github: "https://github.com/sayeepatil/Moat-Swarming-Framework", // update if needed
     },
     {
       title: "Expense Tracker",
@@ -49,8 +42,6 @@ const Projects = () => {
         "Integrated user authentication, cloud storage, and real-time analytics with dynamic charts and dashboards.",
       ],
       image: "💰",
-      stats: { users: "200+", category: "Finance" },
-      github: "https://github.com/sayeepatil/ExpenseTracker",
     },
     {
       title: "Image and Video Processor",
@@ -60,11 +51,9 @@ const Projects = () => {
       technologies: ["Python", "OpenCV", "FFmpeg"],
       achievements: [
         "Reduced media file sizes by up to 65% while maintaining over 90% visual quality.",
-        "Implemented automation to process 1,000+ files per session, increasing content team efficiency by 50%.",
+        "Automated batch-processing of 1,000+ files per session, increasing content team efficiency by 50%.",
       ],
       image: "🎥",
-      stats: { efficiency: "50%", compression: "65%" },
-      github: "https://github.com/sayeepatil/Image-and-Video-Processor",
     },
     {
       title: "ShopLane",
@@ -77,8 +66,6 @@ const Projects = () => {
         "Improved accessibility engagement by 60% and reduced navigation time by 40% with responsive UI.",
       ],
       image: "🛍️",
-      stats: { accessibility: "90%", engagement: "60%" },
-      github: "https://github.com/sayeepatil/ShopLane",
     },
   ];
 
@@ -86,91 +73,76 @@ const Projects = () => {
     <section
       ref={sectionRef}
       id="projects"
-      className="py-20 bg-gray-50 dark:bg-gray-800"
+      className="py-16 bg-gray-50 dark:bg-gray-950"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <h2
-          className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-12 transition-all duration-1000 ${
-            isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-[30px]'
+          className={`text-3xl md:text-4xl font-bold text-center mb-10 transition-all duration-1000 ${
+            isVisible
+              ? "animate-fadeInUp"
+              : "opacity-0 translate-y-[30px]"
           }`}
         >
-          Projects
+          <span className="text-black dark:text-white">Proje</span>
+          <span className="text-teal-600 dark:text-teal-400">cts</span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        {/* Project Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-105 ${
-                isVisible ? 'animate-slideInUp' : 'opacity-0 translate-y-[50px]'
+              className={`bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 hover:scale-105 ${
+                isVisible ? "animate-slideInUp" : "opacity-0 translate-y-[40px]"
               }`}
-              style={{ animationDelay: `${index * 200}ms` }}
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-4xl">{project.image}</div>
-                  <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                    <Calendar className="w-4 h-4" />
+              <div className="p-4 flex flex-col h-full">
+                {/* Icon + Title + Date in row */}
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{project.image}</span>
+                    <h3 className="text-[1.2rem] md:text-[1.4rem] font-extrabold bg-black  dark:from-white dark:to-teal-400 bg-clip-text text-transparent">
+                      {project.title}
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+                    <Calendar className="w-3.5 h-3.5" />
                     <span>{project.period}</span>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                {/* Description */}
+                <p className="text-gray-600 dark:text-gray-300 mb-2 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-1.5 mb-3">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 rounded-full text-sm font-medium"
+                      className="px-2 py-0.5 bg-teal-100/70 dark:bg-teal-900/70 text-teal-700 dark:text-teal-300 rounded-full text-[0.8rem] font-medium"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="space-y-2 mb-4">
+                {/* Achievements */}
+                <div className="space-y-1 mb-2 flex-grow">
                   {project.achievements.map((achievement, achIndex) => (
                     <p
                       key={achIndex}
-                      className="text-sm text-gray-700 dark:text-gray-300 flex items-start gap-2"
+                      className="text-s text-gray-700 dark:text-gray-300 flex items-start gap-1.5"
                     >
-                      <span className="text-teal-600 dark:text-teal-400 mt-1">•</span>
+                      <span className="text-teal-600 dark:text-teal-400 mt-0.5">
+                        •
+                      </span>
                       {achievement}
                     </p>
                   ))}
-                </div>
-
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div className="flex gap-4">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span className="text-sm">Code</span>
-                      </a>
-                    )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        <span className="text-sm">Live</span>
-                      </a>
-                    )}
-                  </div>
                 </div>
               </div>
             </div>
