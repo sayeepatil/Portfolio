@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-const images = ["/profile.jpeg"]; // ✅ Path from public folder
+import React, { useEffect, useState } from "react";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
-const images = [profileImg]; // ✅ Use imported image
+// ✅ Use image from public folder (put profile.jpeg inside /public)
+const images = ["/profile.jpeg"];
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -26,10 +26,11 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
           {/* Left Section: Text & Socials */}
           <div className="text-center lg:text-left animate-fadeInUp">
-            <p className="text-teal-600 dark:text-teal-400 font-semibold text-lg mb-4">Hello, I'm</p>
+            <p className="text-teal-600 dark:text-teal-400 font-semibold text-lg mb-4">
+              Hello, I'm
+            </p>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
               Sayee Patil
             </h1>
@@ -37,9 +38,11 @@ const Hero = () => {
               Computer Science Student | Aspiring Investment Banker
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl">
-              Trained in computer science. Driven by finance.
-              I’m building a path where technology drives smarter financial decisions — from data-backed insights to strategic investments.
-              Curious, analytical, and always evolving, I aim to be part of a new generation of finance professionals who think in code and operate in capital.
+              Trained in computer science. Driven by finance. I’m building a path
+              where technology drives smarter financial decisions — from
+              data-backed insights to strategic investments. Curious, analytical,
+              and always evolving, I aim to be part of a new generation of finance
+              professionals who think in code and operate in capital.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -53,13 +56,22 @@ const Hero = () => {
             </div>
 
             <div className="flex justify-center lg:justify-start gap-6">
-              <a href="https://github.com/sayeepatil" className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+              <a
+                href="https://github.com/sayeepatil"
+                className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >
                 <Github size={24} />
               </a>
-              <a href="https://www.linkedin.com/in/sayee-patil" className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+              <a
+                href="https://www.linkedin.com/in/sayee-patil"
+                className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >
                 <Linkedin size={24} />
               </a>
-              <a href="mailto:sayeepatil111@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+              <a
+                href="mailto:sayeepatil111@gmail.com"
+                className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >
                 <Mail size={24} />
               </a>
             </div>
