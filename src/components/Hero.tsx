@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import profileImg from "/Users/sayeepatil/Downloads/new/Sayee-Portfolio/profile.jpeg";
+const images = ["/profile.jpeg"]; // ✅ Path from public folder
 
 const images = [profileImg]; // ✅ Use imported image
 
